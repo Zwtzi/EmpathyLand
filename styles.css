@@ -1,0 +1,230 @@
+/*===============================
+  Paleta de Colores y Variables
+===============================*/
+:root {
+  --color-principal: #E4C087;
+  --color-secundario: #A2D2DF;
+  --color-fondo: #F6EFBD;
+  --color-acento: #BC7C7C;
+  --color-texto: #333;
+}
+.image-container img {
+  width: 100px; /* o el tamaño que desees */
+  height: auto; /* mantiene la proporción */
+  object-fit: contain; /* ajusta la imagen si el tamaño es muy justo */
+  margin: 0 10px; /* espacio entre imágenes */
+}
+
+
+/*======================
+  Reset General
+======================*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*======================
+  Estilos Generales
+======================*/
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/*======================
+  Navbar
+======================*/
+nav {
+  align-items: center;
+  animation: slideIn 1.5s ease-out;
+  background-color: var(--color-principal);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+nav .logo {
+  height: 50px;
+}
+
+.navbar-links a {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 20px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-links a::after {
+  background-color: var(--color-acento);
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+  width: 100%;
+}
+
+.navbar-links a:hover {
+  color: var(--color-acento);
+  transform: scale(1.1);
+}
+
+.navbar-links a:hover::after {
+  opacity: 1;
+}
+
+/*======================
+  Hero Section
+======================*/
+.hero {
+  animation: fadeIn 2s ease-out;
+  background: var(--color-secundario);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--color-acento);
+  font-size: 3rem;
+}
+
+.hero p {
+  color: var(--color-texto);
+  font-size: 1.2rem;
+}
+
+.marca-personal {
+  color: var(--color-principal);
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+/*======================
+  Casos de Estudio
+======================*/
+.content {
+  padding: 50px 20px;
+}
+
+.case-study {
+  background-color: var(--color-secundario);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.case-study h3 {
+  color: var(--color-acento);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  width: 48%;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+/*======================
+  Navegación por Puntos
+======================*/
+.dots a {
+  color: var(--color-principal);
+  font-size: 1.1rem;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dots a:hover {
+  color: var(--color-acento);
+}
+
+/*======================
+  Footer
+======================*/
+footer {
+  background-color: var(--color-principal);
+  color: white;
+  font-size: 1rem;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--color-acento);
+}
+nav .navbar-links a,
+.case-study .dots a,
+footer a {
+  background-color: #f0f0f0; /* Color de fondo tipo pastilla */
+  color: #333; /* Color del texto */
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav .navbar-links a:hover,
+.case-study .dots a:hover,
+footer a:hover {
+  background-color: #333;
+  color: white;
+}
+
+/*======================
+  Animaciones
+======================*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
