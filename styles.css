@@ -8,13 +8,6 @@
   --color-acento: #BC7C7C;
   --color-texto: #333;
 }
-.image-container img {
-  width: 100px; /* o el tamaño que desees */
-  height: auto; /* mantiene la proporción */
-  object-fit: contain; /* ajusta la imagen si el tamaño es muy justo */
-  margin: 0 10px; /* espacio entre imágenes */
-}
-
 
 /*======================
   Reset General
@@ -47,7 +40,7 @@ nav {
   animation: slideIn 1.5s ease-out;
   background-color: var(--color-principal);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px 20px;
 }
 
@@ -136,19 +129,23 @@ nav .logo {
 
 .image-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* centra el conjunto */
+  gap: 4px;                /* espacio muy pequeño entre imágenes */
   margin-bottom: 20px;
 }
 
 .image-container img {
+  width: calc(50% - 2px);  /* dos imágenes, restamos la mitad del gap */
+  max-width: 300px;         /* límite de ancho opcional */
+  height: auto;
   border-radius: 10px;
   transition: transform 0.3s ease;
-  width: 48%;
 }
 
 .image-container img:hover {
   transform: scale(1.05);
 }
+
 
 /*======================
   Navegación por Puntos
@@ -185,11 +182,15 @@ footer a {
 footer a:hover {
   color: var(--color-acento);
 }
+
+/*======================
+  Enlaces estilo pastilla
+======================*/
 nav .navbar-links a,
 .case-study .dots a,
 footer a {
-  background-color: #f0f0f0; /* Color de fondo tipo pastilla */
-  color: #333; /* Color del texto */
+  background-color: #f0f0f0;
+  color: #333;
   padding: 6px 12px;
   margin: 4px;
   border-radius: 20px;
